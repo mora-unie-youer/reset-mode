@@ -66,7 +66,10 @@
          "char" "int"                   ; Array types
          "include")                     ; File operations
        'symbols)
-     (1 font-lock-keyword-face)))
+     (1 font-lock-keyword-face))
+    ;; Constants
+    ("\\_<\\([A-Z]+\\(\\w\\|_\\)*\\)"
+     1 font-lock-type-face))
   "Additional expressions to highlight in Reset mode.")
 
 (defun reset-mode-variables ()
