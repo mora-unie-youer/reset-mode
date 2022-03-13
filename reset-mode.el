@@ -40,6 +40,14 @@
   :prefix "reset-"
   :group 'languages)
 
+(defvar reset-mode-syntax-table
+  (let ((table (make-syntax-table)))
+    ; Adding comments to our syntax table
+    (modify-syntax-entry ?#  "<" table)
+    (modify-syntax-entry ?\n ">" table)
+    table)
+  "Syntax table to use in Reset mode.")
+
 (define-derived-mode reset-mode prog-mode "Reset"
   "Major mode for editing Reset source code.")
 
