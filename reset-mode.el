@@ -62,6 +62,13 @@
     (modify-syntax-entry ?*  "." table)
     (modify-syntax-entry ?-  "." table)
     (modify-syntax-entry ?\; "." table)
+    ; Parenthesis
+    (modify-syntax-entry ?\( "()" table)
+    (modify-syntax-entry ?\) ")(" table)
+    (modify-syntax-entry ?\{ "(}" table)
+    (modify-syntax-entry ?\} "){" table)
+    (modify-syntax-entry ?\[ "(]" table)
+    (modify-syntax-entry ?\] ")[" table)
     table)
   "Syntax table to use in Reset mode.")
 
