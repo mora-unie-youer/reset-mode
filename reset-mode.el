@@ -56,10 +56,13 @@
   :safe 'booleanp)
 
 (defconst reset-font-lock-keywords
-  `(;; Keywords
+  `(;; Functions
+    ("^\\s *\\([a-zA-Z0-9_-]+\\)\\s *:\\s *(\\(\\s *,?\\s *[ax][0-9]*\\)*)"
+     1 font-lock-function-name-face)
     ;; Labels
     ("^\\s *label\\s +\\([a-zA-Z0-9_-]+\\)"
      1 font-lock-function-name-face)
+    ;; Keywords
     (,(regexp-opt
        '("if" "else"                    ; Conditionals
          "break" "while"                ; Loops
