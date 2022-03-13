@@ -43,4 +43,6 @@
 (define-derived-mode reset-mode prog-mode "Reset"
   "Major mode for editing Reset source code.")
 
+(provide 'reset-mode)
+
 ;;; reset-mode.el ends here
