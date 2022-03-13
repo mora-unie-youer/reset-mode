@@ -48,8 +48,23 @@
     table)
   "Syntax table to use in Reset mode.")
 
+(defcustom reset-indent-tabs-mode nil
+  "Indentation can insert tabs in Reset mode if this is non-nil."
+  :type 'boolean
+  :safe 'booleanp)
+
+(defun reset-mode-variables ()
+  "Set up initial buffer-local variables for Ruby mode."
+  (setq indent-tabs-mode reset-indent-tabs-mode)
+  (setq-local comment-start "#")
+  (setq-local comment-end "")
+  (setq-local comment-start-skip "#+*")
+  (setq-local parse-sexp-ignore-comments t)
+  (setq-local parse-sexp-lookup-properties t))
+
 (define-derived-mode reset-mode prog-mode "Reset"
-  "Major mode for editing Reset source code.")
+  "Major mode for editing Reset source code."
+  (reset-mode-variables))
 
 (provide 'reset-mode)
 
