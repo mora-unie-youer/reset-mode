@@ -35,6 +35,11 @@
 
 ;;; Code:
 
+(defgroup reset nil
+  "Major mode for editing Reset source code."
+  :prefix "reset-"
+  :group 'languages)
+
 (define-derived-mode reset-mode prog-mode "Reset"
   "Major mode for editing Reset source code.")
 
