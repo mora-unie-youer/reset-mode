@@ -47,6 +47,21 @@
     (modify-syntax-entry ?\n ">" table)
     ; Highlight chars as strings
     (modify-syntax-entry ?' "\"" table)
+    ; Punctuation
+    (modify-syntax-entry ?<  "." table)
+    (modify-syntax-entry ?>  "." table)
+    (modify-syntax-entry ?&  "." table)
+    (modify-syntax-entry ?|  "." table)
+    (modify-syntax-entry ?^  "." table)
+    (modify-syntax-entry ?~  "." table)
+    (modify-syntax-entry ?!  "." table)
+    (modify-syntax-entry ?%  "." table)
+    (modify-syntax-entry ?=  "." table)
+    (modify-syntax-entry ?/  "." table)
+    (modify-syntax-entry ?+  "." table)
+    (modify-syntax-entry ?*  "." table)
+    (modify-syntax-entry ?-  "." table)
+    (modify-syntax-entry ?\; "." table)
     table)
   "Syntax table to use in Reset mode.")
 
