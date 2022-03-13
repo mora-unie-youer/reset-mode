@@ -67,6 +67,9 @@
          "include")                     ; File operations
        'symbols)
      (1 font-lock-keyword-face))
+    ;; Variables
+    ("\\_<\\([ax][0-9]+\\)"
+     0 font-lock-variable-name-face)
     ;; Constants
     ("\\_<\\([A-Z]+\\(\\w\\|_\\)*\\)"
      1 font-lock-type-face))
