@@ -58,9 +58,9 @@
 (defun reset-mode-variables ()
   "Set up initial buffer-local variables for Ruby mode."
   (setq indent-tabs-mode reset-indent-tabs-mode)
-  (setq-local comment-start "#")
+  (setq-local comment-start "# ")
   (setq-local comment-end "")
-  (setq-local comment-start-skip "#+*")
+  (setq-local comment-start-skip "#+ *")
   (setq-local parse-sexp-ignore-comments t)
   (setq-local parse-sexp-lookup-properties t))
 
