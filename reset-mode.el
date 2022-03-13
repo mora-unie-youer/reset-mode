@@ -35,6 +35,7 @@
 
 ;;; Code:
 
-(print "Hello, world!")
+(define-derived-mode reset-mode prog-mode "Reset"
+  "Major mode for editing Reset source code.")
 
 ;;; reset-mode.el ends here
