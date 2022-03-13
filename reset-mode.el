@@ -47,6 +47,10 @@
     (modify-syntax-entry ?\n ">" table)
     ; Highlight chars as strings
     (modify-syntax-entry ?' "\"" table)
+    ;
+    (modify-syntax-entry ?_ "_" table)
+    ; Escape
+    (modify-syntax-entry ?\\ "\\" table)
     ; Punctuation
     (modify-syntax-entry ?<  "." table)
     (modify-syntax-entry ?>  "." table)
