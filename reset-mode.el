@@ -64,6 +64,7 @@
   (setq-local parse-sexp-ignore-comments t)
   (setq-local parse-sexp-lookup-properties t))
 
+;;;###autoload
 (define-derived-mode reset-mode prog-mode "Reset"
   "Major mode for editing Reset source code."
   (reset-mode-variables))
