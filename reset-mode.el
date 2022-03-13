@@ -57,6 +57,9 @@
 
 (defconst reset-font-lock-keywords
   `(;; Keywords
+    ;; Labels
+    ("^\\s *label\\s +\\([a-zA-Z0-9_-]+\\)"
+     1 font-lock-function-name-face)
     (,(regexp-opt
        '("if" "else"                    ; Conditionals
          "break" "while"                ; Loops
