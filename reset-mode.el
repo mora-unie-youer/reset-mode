@@ -59,6 +59,9 @@
   `(;; Functions
     ("^\\s *\\([a-zA-Z0-9_-]+\\)\\s *:\\s *(\\(\\s *,?\\s *[ax][0-9]*\\)*)"
      1 font-lock-function-name-face)
+    ;; Arrays and variables
+    ("^\\s *\\([a-zA-Z0-9_-]+\\)\\s *:"
+     1 font-lock-variable-name-face)
     ;; Labels
     ("^\\s *label\\s +\\([a-zA-Z0-9_-]+\\)"
      1 font-lock-function-name-face)
