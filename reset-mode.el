@@ -55,6 +55,20 @@
   :type 'boolean
   :safe 'booleanp)
 
+(defconst reset-font-lock-keywords
+  `(;; Keywords
+    (,(regexp-opt
+       '("if" "else"                    ; Conditionals
+         "break" "while"                ; Loops
+         "allocate" "return" "syscall"  ; Functions-related
+         "global" "goto" "label"        ; Labels
+         "readchar" "writechar"         ; Byte operations
+         "char" "int"                   ; Array types
+         "include")                     ; File operations
+       'symbols)
+     (1 font-lock-keyword-face)))
+  "Additional expressions to highlight in Reset mode.")
+
 (defun reset-mode-variables ()
   "Set up initial buffer-local variables for Ruby mode."
   (setq indent-tabs-mode reset-indent-tabs-mode)
@@ -67,7 +81,9 @@
 ;;;###autoload
 (define-derived-mode reset-mode prog-mode "Reset"
   "Major mode for editing Reset source code."
-  (reset-mode-variables))
+  (reset-mode-variables)
+  (setq-local font-lock-defaults '((reset-font-lock-keywords) nil nil
+                                   ((?_ . "w")))))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.rt\\'" . reset-mode))
