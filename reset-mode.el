@@ -69,6 +69,9 @@
   "Major mode for editing Reset source code."
   (reset-mode-variables))
 
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.rt\\'" . reset-mode))
+
 (provide 'reset-mode)
 
 ;;; reset-mode.el ends here
