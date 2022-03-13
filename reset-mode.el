@@ -113,9 +113,30 @@
      1 font-lock-type-face))
   "Additional expressions to highlight in Reset mode.")
 
+(defun reset-indent-line ()
+  "Basic indentation function."
+  (let (indent boi-p move-eol-p (point (point)))
+    (save-excursion
+      (back-to-indentation)
+      (setq indent (car (syntax-ppss))
+            boi-p  (= point (point)))
+      (when (and (eq (char-after) ?\n)
+                 (not boi-p))
+        (setq indent 0))
+      (when boi-p
+        (setq move-eol-p t))
+      (when (or (eq (char-after) ?\))
+                (eq (char-after) ?\}))
+        (setq indent (1- indent)))
+      (delete-region (line-beginning-position) (point))
+      (indent-to (* tab-width indent)))
+    (when move-eol-p
+      (move-end-of-line nil))))
+
 (defun reset-mode-variables ()
   "Set up initial buffer-local variables for Ruby mode."
   (setq indent-tabs-mode reset-indent-tabs-mode)
+  (setq-local indent-line-function #'reset-indent-line)
   (setq-local comment-start "# ")
   (setq-local comment-end "")
   (setq-local comment-start-skip "#+ *")
