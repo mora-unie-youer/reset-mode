@@ -99,7 +99,7 @@
          "global" "goto" "label"        ; Labels
          "readchar" "writechar"         ; Byte operations
          "char" "int"                   ; Array types
-         "include")                     ; File operations
+         "include" "include_once")      ; File operations
        'symbols)
      (1 font-lock-keyword-face))
     ;; Function call
