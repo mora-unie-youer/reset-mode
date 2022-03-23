@@ -81,6 +81,11 @@
   :type 'boolean
   :safe 'booleanp)
 
+(defcustom reset-indent-level 2
+  "Indentation level for Reset."
+  :type 'integer
+  :safe 'integerp)
+
 (defconst reset-font-lock-keywords
   `(;; Functions
     ("^\\s *\\([a-zA-Z0-9_-]+\\)\\s *:\\s *(\\(\\s *,?\\s *[ax][0-9]*\\)*)"
@@ -135,6 +140,7 @@
 (defun reset-mode-variables ()
   "Set up initial buffer-local variables for Ruby mode."
   (setq indent-tabs-mode reset-indent-tabs-mode)
+  (setq-local tab-width reset-indent-level)
   (setq-local indent-line-function #'reset-indent-line)
   (setq-local comment-start "# ")
   (setq-local comment-end "")
