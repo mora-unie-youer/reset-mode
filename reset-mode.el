@@ -93,13 +93,13 @@
      1 font-lock-function-name-face)
     ;; Keywords
     (,(regexp-opt
-       '("if" "else"                    ; Conditionals
-         "break" "continue" "while"     ; Loops
-         "allocate" "return" "syscall"  ; Functions-related
-         "global" "goto" "label"        ; Labels
-         "readchar" "writechar"         ; Byte operations
-         "char" "int"                   ; Array types
-         "include" "include_once")      ; File operations
+       '("if" "else"                            ; Conditionals
+         "break" "continue" "for" "while"       ; Loops
+         "allocate" "return" "syscall"          ; Functions-related
+         "global" "goto" "label"                ; Labels
+         "readchar" "writechar"                 ; Byte operations
+         "char" "int"                           ; Array types
+         "include" "include_once")              ; File operations
        'symbols)
      (1 font-lock-keyword-face))
     ;; Function call
