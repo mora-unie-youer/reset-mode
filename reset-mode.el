@@ -94,7 +94,7 @@
     ;; Keywords
     (,(regexp-opt
        '("if" "else"                    ; Conditionals
-         "break" "while"                ; Loops
+         "break" "continue" "while"     ; Loops
          "allocate" "return" "syscall"  ; Functions-related
          "global" "goto" "label"        ; Labels
          "readchar" "writechar"         ; Byte operations
