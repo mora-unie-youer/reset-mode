@@ -106,10 +106,9 @@
     ("\\([a-zA-Z0-9_-]+\\)\\s *("
      1 font-lock-function-name-face)
     ;; Variables
-    ("\\_<\\([ax][0-9]+\\)"
-     0 font-lock-variable-name-face)
+    ("\\_<[ax][0-9]+\\_>" . font-lock-variable-name-face)
     ;; Constants
-    ("\\_<\\([A-Z]+\\(\\w\\|_\\)*\\)"
+    ("\\_<\\([A-Z]+\\(\\w\\|_\\)*\\)\\_>"
      1 font-lock-type-face))
   "Additional expressions to highlight in Reset mode.")
 
