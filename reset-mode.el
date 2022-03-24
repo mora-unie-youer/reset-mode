@@ -100,7 +100,7 @@
     (,(regexp-opt
        '("if" "else"                            ; Conditionals
          "break" "continue" "do" "for" "while"  ; Loops
-         "allocate" "return" "syscall"          ; Functions-related
+         "allocate" "asm" "return" "syscall"    ; Functions-related
          "global" "goto" "label"                ; Labels
          "readchar" "writechar"                 ; Byte operations
          "char" "int"                           ; Array types
